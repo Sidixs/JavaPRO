@@ -1,0 +1,80 @@
+
+[
+  {
+    "question": "co to java1?",
+    "answers": [
+      "odpowiedz jeden",
+      "odpowiedzdwa",
+      "odpowiedz3",
+      "odpowiedz4"
+    ],
+    "rightAnswers": [
+      0,
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "question": "co to java2?",
+    "answers": [
+      "odpowiedz jeden p2",
+      "odpowiedzdwa p2",
+      "odpowiedz3 p2",
+      "odpowiedz4 p2",
+      "odpowiedz5 p2"
+    ],
+    "rightAnswers": [
+      0,
+      1,
+      1,
+      0,
+      1
+    ]
+  },
+  {
+    "question": "co to java3?",
+    "answers": [
+      "odpowiedz jeden",
+      "odpowiedzdwa",
+      "odpowiedz3",
+      "odpowiedz4"
+    ],
+    "rightAnswers": [
+      0,
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "question": "co to java4?",
+    "answers": [
+      "odpowiedz jeden",
+      "odpowiedzdwa",
+      "odpowiedz3",
+      "odpowiedz4"
+    ],
+    "rightAnswers": [
+      0,
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "question": "co to java5?",
+    "answers": [
+      "odpowiedz jeden",
+      "odpowiedzdwa",
+      "odpowiedz3",
+      "odpowiedz4"
+    ],
+    "rightAnswers": [
+      0,
+      1,
+      1,
+      0
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPaneSlider" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pro.javapro.SlideViewerMenuController">
+   <children>
+      <Button fx:id="wyklad1btn" layoutX="369.0" layoutY="161.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 1" />
+      <Button fx:id="wyklad2btn" layoutX="369.0" layoutY="274.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 2" />
+      <Button fx:id="wyklad3btn" layoutX="369.0" layoutY="388.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 3" />
+   </children>
+</AnchorPane>
