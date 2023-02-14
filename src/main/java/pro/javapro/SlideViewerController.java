@@ -2,6 +2,7 @@ package pro.javapro;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,12 +27,24 @@ public class SlideViewerController {
     @FXML
     Label labelField;
     @FXML
+    Button firstBtn;
+    @FXML
+    Button previousBtn;
+    @FXML
+    Button nextBtn;
+    @FXML
+    Button lastBtn;
+    @FXML
     public void setImageView() throws IOException{
         currentImage = 0;
         try {
             folder = new File(getClass().getResource(path).toURI());
         } catch (Exception e) {
-            labelField.setText("Brak zawartości");
+            labelField.setText(name+" - brak zawartości");
+            firstBtn.setVisible(false);
+            previousBtn.setVisible(false);
+            nextBtn.setVisible(false);
+            lastBtn.setVisible(false);
             return;
         }
         maxImages = folder.listFiles().length-1;

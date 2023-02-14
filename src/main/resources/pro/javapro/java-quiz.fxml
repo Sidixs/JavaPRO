@@ -7,6 +7,6 @@
 <AnchorPane fx:id="questionAchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pro.javapro.JavaQuizController">
    <children>
       <Button fx:id="confirmBtn" layoutX="416.0" layoutY="495.0" mnemonicParsing="false" onAction="#confirmBtnClicked" text="Zatwierdź" textAlignment="CENTER" />
-      <VBox fx:id="questionVBox" layoutX="162.0" layoutY="14.0" prefHeight="455.0" prefWidth="575.0" />
+      <VBox fx:id="questionVBox" layoutX="228.0" layoutY="14.0" prefHeight="455.0" prefWidth="443.0" />
    </children>
 </AnchorPane>

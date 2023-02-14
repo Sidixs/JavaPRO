@@ -1,12 +1,15 @@
 
 [
   {
-    "question": "co to java1?",
+    "question": "Przykład pytania ze zdjęciem w formacie png",
+    "hasImage": 1,
+    "imageName": "image.png",
+    "hasCode": 0,
     "answers": [
-      "odpowiedz jeden",
-      "odpowiedzdwa",
-      "odpowiedz3",
-      "odpowiedz4"
+      "Odpowiedź nr1 - niepoprawna",
+      "Odpowiedź nr2 - poprawna",
+      "Odpowiedź nr3 - poprawna",
+      "Odpowiedź nr4 - niepoprawna"
     ],
     "rightAnswers": [
       0,
@@ -16,65 +19,101 @@
     ]
   },
   {
-    "question": "co to java2?",
+    "question": "Przykład pytania z kodem z pliku .java i niestandardową liczbą odpowiedzi",
+    "hasImage": 0,
+    "hasCode": 1,
+    "codeName": "java.java",
     "answers": [
-      "odpowiedz jeden p2",
-      "odpowiedzdwa p2",
-      "odpowiedz3 p2",
-      "odpowiedz4 p2",
-      "odpowiedz5 p2"
+      "Odpowiedź nr1 - niepoprawna",
+      "Odpowiedź nr2 - poprawna",
+      "Odpowiedź nr3 - poprawna",
+      "Odpowiedź nr4 - niepoprawna",
+      "Odpowiedź nr5 - niepoprawna"
     ],
     "rightAnswers": [
       0,
       1,
       1,
       0,
+      0
+    ]
+  },
+  {
+    "question": "Przykład pytania ze zdjęciem w formacie jpg oraz tekstem z pliku txt",
+    "hasImage": 1,
+    "imageName": "intellij.jpg",
+    "hasCode": 1,
+    "codeName": "tekst.txt",
+    "answers": [
+      "Odpowiedź nr1 - poprawna",
+      "Odpowiedź nr2 - niepoprawna",
+      "Odpowiedź nr3 - poprawna",
+      "Odpowiedź nr4 - niepoprawna"
+    ],
+    "rightAnswers": [
+      1,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "question": "Przykład pytania z większą ilością odpowiedzi",
+    "hasImage": 0,
+    "hasCode": 0,
+    "answers": [
+      "Odpowiedź nr1 - poprawna",
+      "Odpowiedź nr2 - niepoprawna",
+      "Odpowiedź nr3 - niepoprawna",
+      "Odpowiedź nr4 - niepoprawna",
+      "Odpowiedź nr5 - niepoprawna",
+      "Odpowiedź nr6 - niepoprawna",
+      "Odpowiedź nr7 - poprawna",
+      "Odpowiedź nr8 - niepoprawna"
+    ],
+    "rightAnswers": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "question": "Przykład pytania z dwiema odpowiedziami",
+    "hasImage": 0,
+    "hasCode": 0,
+    "answers": [
+      "Odpowiedź nr1 - poprawna",
+      "Odpowiedź nr2 - niepoprawna"
+    ],
+    "rightAnswers": [
+      1,
+      0
+    ]
+  },
+  {
+    "question": "Przykład pytania z wszystkimi odpowiedziami poprawnymi",
+    "hasImage": 0,
+    "hasCode": 0,
+    "answers": [
+      "Odpowiedź nr1",
+      "Odpowiedź nr2",
+      "Odpowiedź nr3",
+      "Odpowiedź nr4",
+      "Odpowiedź nr5",
+      "Odpowiedź nr6"
+    ],
+    "rightAnswers": [
+      1,
+      1,
+      1,
+      1,
+      1,
       1
-    ]
-  },
-  {
-    "question": "co to java3?",
-    "answers": [
-      "odpowiedz jeden",
-      "odpowiedzdwa",
-      "odpowiedz3",
-      "odpowiedz4"
-    ],
-    "rightAnswers": [
-      0,
-      1,
-      1,
-      0
-    ]
-  },
-  {
-    "question": "co to java4?",
-    "answers": [
-      "odpowiedz jeden",
-      "odpowiedzdwa",
-      "odpowiedz3",
-      "odpowiedz4"
-    ],
-    "rightAnswers": [
-      0,
-      1,
-      1,
-      0
-    ]
-  },
-  {
-    "question": "co to java5?",
-    "answers": [
-      "odpowiedz jeden",
-      "odpowiedzdwa",
-      "odpowiedz3",
-      "odpowiedz4"
-    ],
-    "rightAnswers": [
-      0,
-      1,
-      1,
-      0
     ]
   }
 ]

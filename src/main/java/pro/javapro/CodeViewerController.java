@@ -44,6 +44,7 @@ public class CodeViewerController implements Initializable {
                 while (scanner.hasNextLine()){
                     content+=scanner.nextLine()+"\n";
                 }
+                content = content.substring(4,content.length());
                 contentContainer.setText(content);
             }
         });

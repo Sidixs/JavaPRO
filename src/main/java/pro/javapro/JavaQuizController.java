@@ -1,13 +1,16 @@
 package pro.javapro;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -23,13 +26,12 @@ public class JavaQuizController {
     VBox questionVBox;
     @FXML
     Button confirmBtn;
-    private String path = "JavaQuiz";
+    private String path = "/JavaQuiz";
     private JSONArray jsonArrayFile;
     private Integer questionIndex;
     private Integer points;
     private Integer maxPoints;
     public void initialize() throws FileNotFoundException {
-//        JSONArray jsonObject = new JSONArray(new FileReader("src/main/resources/JavaQuiz/Quiz.json"));
         questionIndex = 0;
         points = 0;
         String content = null;
@@ -43,46 +45,32 @@ public class JavaQuizController {
                 x++;
             }
         }
-        System.out.println(content);
 
         //Json ArrayFile
         jsonArrayFile = new JSONArray(content);
         maxPoints = jsonArrayFile.length();
-        System.out.println("maxPoints "+maxPoints);
 
+        JSONObject first = (JSONObject) jsonArrayFile.get(0);//main object
 
-        System.out.println(((JSONObject) jsonArrayFile.get(1)).get("question"));
-        System.out.println(jsonArrayFile);
-//        JSONObject array = new JSONObject(((JSONObject)obj.get(1)).get("answers"));
-        JSONObject tempobj = (JSONObject) jsonArrayFile.get(1);
-        JSONArray array = (JSONArray)tempobj.get("answers");
-        System.out.println(array);
-        JSONArray arrayright = (JSONArray)tempobj.get("rightAnswers");
-        System.out.println(arrayright.get(1).equals(1));
+        if (first.get("hasImage").equals(1)){
+            AddImage(first.get("imageName").toString());
+        }
+        if (first.get("hasCode").equals(1)){
+            AddCode(first.get("codeName").toString());
+        }
 
         //Question
-        JSONObject first = (JSONObject) jsonArrayFile.get(0);//main object
         Label question = new Label(first.getString("question"));
         questionVBox.getChildren().add(question);
 
         //Answers
         JSONArray answersArray = (JSONArray)first.get("answers");
-        System.out.println(answersArray.length());
 
         answers = new CheckBox[answersArray.length()];
         for (int i = 0; i<answersArray.length();i++){
             answers[i] = new CheckBox(answersArray.get(i).toString());
-//            answers[i].setStyle("-fx-padding: "+(50+30*i)+" 0 0 0;");
-//            CheckBox checkBox = new CheckBox(answersArray.get(i).toString());
-//            checkBox.setStyle("-fx-padding: "+(50+30*i)+" 0 0 0;");
-//            questionPane.getChildren().add(checkBox);
         }
-//        answers[1].selectedProperty().set(true);
         questionVBox.getChildren().addAll(answers);
-        System.out.println(answers.length);
-//        for (int i = 0; i<answersArray.length();i++){
-//            questionPane.getChildren().add(answers[i]);
-//        }
     }
     @FXML
     public void confirmBtnClicked() {
@@ -97,14 +85,33 @@ public class JavaQuizController {
         if (flag==0){
             points++;
         }
-        System.out.println("Punkty: "+points);
         questionIndex++;
-        System.out.println("questionIndex "+questionIndex);
         if (questionIndex<maxPoints){
             NextQuestion();
             return;
         }
         ScorePanel();
+    }
+
+    public void AddImage(String name){
+        ImageView imageView = new ImageView();
+        Image image = new Image(getClass().getResourceAsStream(path+"/"+name));
+        imageView.setImage(image);
+        questionVBox.getChildren().add(imageView);
+    }
+
+    public void AddCode(String name){
+        Label textArea = new Label();
+        textArea.setStyle("-fx-background-color: rgb(217, 218, 219)");
+        String content = null;
+        Scanner scanner;
+        scanner = new Scanner(getClass().getResourceAsStream(path+"/"+name));
+        while (scanner.hasNextLine()){
+            content+=scanner.nextLine()+"\n";
+        }
+        content = content.substring(4,content.length());
+        textArea.setText(content);
+        questionVBox.getChildren().add(textArea);
     }
 
     public void NextQuestion(){
@@ -115,8 +122,13 @@ public class JavaQuizController {
         for (int i = 0; i<answersArray.length();i++){
             answers[i] = new CheckBox(answersArray.get(i).toString());
         }
-
         questionVBox.getChildren().clear();
+        if (jsonObject.get("hasImage").equals(1)){
+            AddImage(jsonObject.get("imageName").toString());
+        }
+        if (jsonObject.get("hasCode").equals(1)){
+            AddCode(jsonObject.get("codeName").toString());
+        }
         questionVBox.getChildren().add(question);
         questionVBox.getChildren().addAll(answers);
     }

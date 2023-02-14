@@ -6,14 +6,16 @@
       "Java.com",
       "Java - wikiepdia",
       "Java - Oracle",
-      "W3Schools"
+      "W3Schools",
+      "IntelliJ IDEA"
     ],
     "urls": [
       "http://web.prz.edu.pl/",
       "https://www.java.com/pl/",
       "https://pl.wikipedia.org/wiki/Java",
       "https://www.oracle.com/pl/java/",
-      "https://www.w3schools.com/java/"
+      "https://www.w3schools.com/java/",
+      "https://www.jetbrains.com/idea/"
     ]
   }
 ]
