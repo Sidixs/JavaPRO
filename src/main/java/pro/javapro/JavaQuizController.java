@@ -102,7 +102,9 @@ public class JavaQuizController {
 
     public void AddCode(String name){
         Label textArea = new Label();
-        textArea.setStyle("-fx-background-color: rgb(217, 218, 219)");
+        textArea.setStyle("-fx-background-color: rgb(217, 218, 219); -fx-padding: 10 0 10 0;" +
+                "    -fx-border-insets: 10 0 10 0;" +
+                "    -fx-background-insets: 10 0 10 0;");
         String content = null;
         Scanner scanner;
         scanner = new Scanner(getClass().getResourceAsStream(path+"/"+name));
@@ -137,6 +139,7 @@ public class JavaQuizController {
         Label score = new Label("Wynik: "+points+"/"+maxPoints);
         confirmBtn.setVisible(false);
         questionVBox.getChildren().clear();
+        questionVBox.setStyle("-fx-alignment: CENTER");
         questionVBox.getChildren().add(score);
     }
 }

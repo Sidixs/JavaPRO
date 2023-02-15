@@ -7,7 +7,11 @@
       "Java - wikiepdia",
       "Java - Oracle",
       "W3Schools",
-      "IntelliJ IDEA"
+      "IntelliJ IDEA",
+      "JavaFX",
+      "Java SE - Oracle",
+      "Spring",
+      "Java Tutorials - Oracle"
     ],
     "urls": [
       "http://web.prz.edu.pl/",
@@ -15,7 +19,11 @@
       "https://pl.wikipedia.org/wiki/Java",
       "https://www.oracle.com/pl/java/",
       "https://www.w3schools.com/java/",
-      "https://www.jetbrains.com/idea/"
+      "https://www.jetbrains.com/idea/",
+      "https://openjfx.io/",
+      "https://www.oracle.com/pl/java/technologies/java-se-glance.html",
+      "https://spring.io/",
+      "https://docs.oracle.com/javase/tutorial/"
     ]
   }
 ]

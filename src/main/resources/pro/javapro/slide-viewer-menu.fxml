@@ -5,8 +5,10 @@
 
 <AnchorPane fx:id="anchorPaneSlider" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pro.javapro.SlideViewerMenuController">
    <children>
-      <Button fx:id="wyklad1btn" layoutX="369.0" layoutY="161.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 1" />
-      <Button fx:id="wyklad2btn" layoutX="369.0" layoutY="274.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 2" />
-      <Button fx:id="wyklad3btn" layoutX="369.0" layoutY="388.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 3" />
+      <Button fx:id="wyklad1btn" layoutX="369.0" layoutY="100.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 1" AnchorPane.bottomAnchor="474.0" />
+      <Button fx:id="wyklad2btn" layoutX="369.0" layoutY="185.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 2" AnchorPane.bottomAnchor="374.0" />
+      <Button fx:id="wyklad3btn" layoutX="369.0" layoutY="274.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 3" AnchorPane.bottomAnchor="274.0" />
+      <Button fx:id="wyklad4btn" layoutX="369.0" layoutY="368.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 4" AnchorPane.bottomAnchor="174.0" />
+      <Button fx:id="wyklad5btn" layoutX="369.0" layoutY="456.0" mnemonicParsing="false" onAction="#ButonClicked" prefHeight="52.0" prefWidth="112.0" text="Wykład 5" AnchorPane.bottomAnchor="74.0" />
    </children>
 </AnchorPane>

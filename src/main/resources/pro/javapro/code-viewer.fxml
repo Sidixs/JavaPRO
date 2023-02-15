@@ -23,7 +23,7 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="512.0" prefWidth="601.0">
                            <children>
-                              <TextArea fx:id="contentContainer" prefHeight="510.0" prefWidth="602.0" />
+                              <TextArea fx:id="contentContainer" editable="false" prefHeight="510.0" prefWidth="602.0" />
                            </children>
                         </AnchorPane>
                     </content>
