@@ -1,8 +1,10 @@
 package pro.javapro;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +22,7 @@ public class SlideViewerController {
     private Image[] images;
     private File folder;
     private Integer maxImages;
+    private Integer[] choiceBoxArray;
     @FXML
     AnchorPane anchorPaneSlider;
     @FXML
@@ -35,6 +38,8 @@ public class SlideViewerController {
     @FXML
     Button lastBtn;
     @FXML
+    ChoiceBox<Integer> pageChoiceBox;
+    @FXML
     public void setImageView() throws IOException{
         currentImage = 0;
         try {
@@ -45,6 +50,7 @@ public class SlideViewerController {
             previousBtn.setVisible(false);
             nextBtn.setVisible(false);
             lastBtn.setVisible(false);
+            pageChoiceBox.setVisible(false);
             return;
         }
         maxImages = folder.listFiles().length-1;
@@ -52,11 +58,24 @@ public class SlideViewerController {
         for (int i = 0; i<=folder.listFiles().length-1; i++){
             images[i] = new Image(getClass().getResourceAsStream(path+"/"+folder.listFiles()[i].getName()));
         }
+        choiceBoxArray = new Integer[maxImages+1];
+        for (int i = 0; i<=maxImages; i++){
+            choiceBoxArray[i] = i+1;
+        }
         labelField.setText(name+" - slajd "+(currentImage+1)+" z "+(maxImages+1));
+        pageChoiceBox.getItems().addAll(choiceBoxArray);
+        pageChoiceBox.setOnAction(this::ChoiceBoxAction);
+        pageChoiceBox.setValue(currentImage+1);
         myimageview.setImage(images[currentImage]);
     }
     public void setPath(String path) {
         this.path = path;
+    }
+
+    private void ChoiceBoxAction(ActionEvent event){
+        currentImage = pageChoiceBox.getValue()-1;
+        labelField.setText(name+" - slajd "+(currentImage+1)+" z "+(maxImages+1));
+        myimageview.setImage(images[currentImage]);
     }
 
     @FXML
@@ -66,6 +85,7 @@ public class SlideViewerController {
             currentImage=maxImages;
             return;
         }
+        pageChoiceBox.setValue(currentImage+1);
         labelField.setText(name+" - slajd "+(currentImage+1)+" z "+(maxImages+1));
         myimageview.setImage(images[currentImage]);
     }
@@ -76,6 +96,7 @@ public class SlideViewerController {
             currentImage=0;
             return;
         }
+        pageChoiceBox.setValue(currentImage+1);
         labelField.setText(name+" - slajd "+(currentImage+1)+" z "+(maxImages+1));
         myimageview.setImage(images[currentImage]);
     }
@@ -86,6 +107,7 @@ public class SlideViewerController {
             return;
         }
         currentImage = 0;
+        pageChoiceBox.setValue(currentImage+1);
         labelField.setText(name+" - slajd "+(currentImage+1)+" z "+(maxImages+1));
         myimageview.setImage(images[currentImage]);
     }
@@ -95,6 +117,7 @@ public class SlideViewerController {
             return;
         }
         currentImage = maxImages;
+        pageChoiceBox.setValue(currentImage+1);
         labelField.setText(name+" - slajd "+(currentImage+1)+" z "+(maxImages+1));
         myimageview.setImage(images[currentImage]);
     }
