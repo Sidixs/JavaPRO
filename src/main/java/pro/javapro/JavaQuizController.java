@@ -61,6 +61,9 @@ public class JavaQuizController {
 
         //Question
         Label question = new Label(first.getString("question"));
+        question.setStyle("-fx-padding: 5 0 5 0;" +
+                "    -fx-border-insets: 5 0 5 0;" +
+                "    -fx-background-insets: 5 0 5 0;");
         questionVBox.getChildren().add(question);
 
         //Answers
@@ -69,6 +72,9 @@ public class JavaQuizController {
         answers = new CheckBox[answersArray.length()];
         for (int i = 0; i<answersArray.length();i++){
             answers[i] = new CheckBox(answersArray.get(i).toString());
+            answers[i].setStyle("-fx-padding: 0 0 5 0;" +
+                    "    -fx-border-insets: 0 0 5 0;" +
+                    "    -fx-background-insets: 0 0 5 0;");
         }
         questionVBox.getChildren().addAll(answers);
     }
@@ -102,9 +108,9 @@ public class JavaQuizController {
 
     public void AddCode(String name){
         Label textArea = new Label();
-        textArea.setStyle("-fx-background-color: rgb(217, 218, 219); -fx-padding: 10 0 10 0;" +
-                "    -fx-border-insets: 10 0 10 0;" +
-                "    -fx-background-insets: 10 0 10 0;");
+        textArea.setStyle("-fx-background-color: rgb(217, 218, 219); -fx-padding: 10 0 5 0;" +
+                "    -fx-border-insets: 10 0 5 0;" +
+                "    -fx-background-insets: 10 0 5 0;");
         String content = null;
         Scanner scanner;
         scanner = new Scanner(getClass().getResourceAsStream(path+"/"+name));
@@ -119,10 +125,16 @@ public class JavaQuizController {
     public void NextQuestion(){
         JSONObject jsonObject = (JSONObject) jsonArrayFile.get(questionIndex);//main object
         Label question = new Label(jsonObject.getString("question"));
+        question.setStyle("-fx-padding: 5 0 5 0;" +
+                "    -fx-border-insets: 5 0 5 0;" +
+                "    -fx-background-insets: 5 0 5 0;");
         JSONArray answersArray = (JSONArray)jsonObject.get("answers");
         answers = new CheckBox[answersArray.length()];
         for (int i = 0; i<answersArray.length();i++){
             answers[i] = new CheckBox(answersArray.get(i).toString());
+            answers[i].setStyle("-fx-padding: 0 0 5 0;" +
+                    "    -fx-border-insets: 0 0 5 0;" +
+                    "    -fx-background-insets: 0 0 5 0;");
         }
         questionVBox.getChildren().clear();
         if (jsonObject.get("hasImage").equals(1)){
@@ -137,6 +149,7 @@ public class JavaQuizController {
 
     public void ScorePanel(){
         Label score = new Label("Wynik: "+points+"/"+maxPoints);
+        score.setStyle("-fx-font-size: 20");
         confirmBtn.setVisible(false);
         questionVBox.getChildren().clear();
         questionVBox.setStyle("-fx-alignment: CENTER");
